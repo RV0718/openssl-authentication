@@ -5,40 +5,39 @@ A Secure Socket Layer (SSL) certificate is a security protocol which secures dat
 
 
 ## Symmetric Encryption
-This is the way to establish a communication between the server and a client using same key i.e. there will be only one key used for encryption and decryption.
-
+This is the way to establish a communication between the server and a client using same key i.e. there will be only one key  for encryption and decryption.
 
 
 ![Symmetric Encryption](https://github.com/RV0718/archietecture-images/blob/main/symmetric.jpg "Symmetric Encryption")
 
-Process:   
+**Process**:   
 a. Client will generate the symmetric key using **ssh-keygen** command.   
-b. Once done user will now have two files id_rsa and id_rsa.pub.    
-c. Now, user will access the secure server from browser.   
+b. Once done, user will now have two files id_rsa and id_rsa.pub.    
+c. User will access the secure server from browser.   
 d. Browser will render the application page.   
-e. Now, user will fill the login page with confidential details like username and password.   
-f. Upon click browser/application encrypt that data and send to the server.   
-g. In between a hacker sniff the encrypted data, however at this position server and the hacker both can't do anything with this data.   
-h. So, user has to share the private generated key with the server, so that server can use the key, decrypt the data and use it.   
-i. But, as user sent the key over the internet, hacker can also get the copy of this key and hack your data.   
+e. User will fill the login page with details like username and password.   
+f. Upon submission, browser/application encrypt that data and send it to the server.   
+g. In between a hacker sniff the encrypted data, however, at this position both server and the hacker can't do anything with this data.   
+h. User has to share the private generated key with the server, so that server can use the key to decrypt the data and use it.   
+i. But, as user shared the key over the internet, hacker can also get the copy of this key and hack the data.   
 
 
 ## Asymmetric Encryption
-This is the similar to what we have with symmetric but user will share the symmetric private key with server in a secured way.
+This is the process where instead of only one key to encrypt and decrypt the data; we will be using the 2 key (private and public) process to setup the secure communication between the server and client. Once communication setup done, client will use the symmetric key to send the encrypted data to the server.
 
-Process:
+**Process**:
 a. Client will generate the symmetric key using **ssh-keygen** command.      
-b. Once done user will now have two files id_rsa and id_rsa.pub.   
+b. User will now have two files id_rsa and id_rsa.pub.   
 c. We will generate the server's public, private key and CSR using **openssl** commands explained in below steps.   
-d. In this case we will share the server's CSR with authorized CAs to sign it.   
+d. In this case we will share the server's CSR with authorized CAs to sign it. (For local purpose you can self-sign the key)   
 e. CAs used their own different way to sign the certificates.
-f. Now, user will access the secure server from browser.   
+f. User will access the secure server from browser.   
 g. Browser will render the application page.  
 h. Server will share the key (CA signed server CSR + public key of the server) with the client.   
-i. Now, user will fill the login page with confidential details like username and password.   
-j. Upon click, browser/application encrypt that data and send to the server.   
-k. Along with this data, client will also send its symmetric private key  by wrapping with server's public key.   
-l. Server will use this data and get the client's symmetric key and will use it to decrypt client data.   
+i. User will fill the login page with details like username and password.   
+j. Upon submission, browser/application encrypt that data and send it to the server.   
+k. Along with this data, client will also send its symmetric private key by wrapping with server's public key.   
+l. Server will use this data and get the client's symmetric key and will use it to decrypt client data for further communication.   
 m. This way we can setup the secure communication between the server and client.   
 n. In this case also hacker can sniff the data and key but can't do anything with that as he does not know how to decrypt the data.   
 
@@ -125,6 +124,3 @@ In case if you're facing any issue while creating the key, or generating the CSR
   
 
 ##### **Note**: We should never share the private key we generated with anyone.
-
-
-
