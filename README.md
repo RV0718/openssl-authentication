@@ -43,6 +43,14 @@ m. This way we can setup the secure communication between the server and client.
 n. In this case also hacker can sniff the data and key but can't do anything with that as he does not know how to decrypt the data.   
 
 
+## Keys Naming Convention
+Keys ends with ".crt" or ".pem" are generally public keys.
+
+Keys ends with ".key" or have ".key" in between name are generally private keys.
+
+
+![Naming Conventions](https://github.com/RV0718/archietecture-images/blob/main/naming-convention-keys.jpg "Naming Conventions")
+
 
 ### 1) Steps to generate the SSL certificates using openssl (a command line tool)
 
