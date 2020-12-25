@@ -8,7 +8,6 @@ A Secure Socket Layer (SSL) certificate is a security protocol which secures dat
 This is the way to establish a communication between the server and a client using same key i.e. there will be only one key used for encryption and decryption.
 
 
-![Symmetric Encryption](/Users/RV0718/Study/arch_images/symmetric.jpg "Symmetric Encryption")
 
 ![Symmetric Encryption](https://github.com/RV0718/archietecture-images/blob/main/symmetric.jpg "Symmetric Encryption")
 
