@@ -10,6 +10,8 @@ This is the way to establish a communication between the server and a client usi
 
 ![Symmetric Encryption](/Users/RV0718/Study/arch_images/symmetric.jpg "Symmetric Encryption")
 
+![Symmetric Encryption](https://github.com/RV0718/archietecture-images/blob/main/symmetric.jpg "Symmetric Encryption")
+
 Process:   
 a. Client will generate the symmetric key using **ssh-keygen** command.   
 b. Once done user will now have two files id_rsa and id_rsa.pub.    
